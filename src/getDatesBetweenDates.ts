@@ -1,11 +1,11 @@
 export const getDatesBetweenDates = (startDate: { clone: () => any; }, endDate: any) => {
     let now = startDate.clone(),
-      dates = [];
+      dates = []
   
     while (now.isSameOrBefore(endDate)) {
-      dates.push(now.clone());
-      now.add(1, "d");
+      dates.push(now.clone())
+      now.add(1, "d")
     }
-    return dates;
+    return dates
   };
   
