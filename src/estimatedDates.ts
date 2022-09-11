@@ -5,8 +5,8 @@ import { getDatesBetweenDates } from './getDatesBetweenDates'
 
 interface EstimatedDateOptions {
     day: string,
-    sessions:number,
-    holidays:Array<String>,
+    sessions: number,
+    holidays: Array<String>,
 }
 
 function estimatedDates({ day, sessions, holidays}:EstimatedDateOptions){
@@ -14,13 +14,13 @@ function estimatedDates({ day, sessions, holidays}:EstimatedDateOptions){
    * Recovery from the previous year
    * to the current to calculate the start date of the slots
    */
-   const start = moment(moment().subtract(1, "y").year().toString() + "-09-02");
+   const start = moment(moment().subtract(1, "y").year().toString() + "-09-02")
    
    /**
     * Recovery from the newt year
     * to the current to calculate the end date of the slots
     */
-   const end = moment(moment().add(1, "y").year().toString() + "-06-30");
+   const end = moment(moment().add(1, "y").year().toString() + "-06-30")
    
   /**
    * A date table without the summer holidays,
@@ -28,13 +28,13 @@ function estimatedDates({ day, sessions, holidays}:EstimatedDateOptions){
    */
    const dateList = getDatesBetweenDates(start, end)
    .filter((c) => !holidays.includes(moment(c).format('MM')))
-   .filter((c) => c.format("dddd") === day);
+   .filter((c) => c.format("dddd") === day)
 
  /**
   * Total number of days available divided
   * by the number of slots desired
   */
- const repetitions = Math.round(dateList.length / sessions);
+ const repetitions = Math.round(dateList.length / sessions)
 
 
  /**
