@@ -8,17 +8,36 @@
     <title>Vite + TS</title>
   </head>
   <body>
+    sdfsdf
+    <script>
+      var selectedDate = "Wednesday";
+      var numberOfSession = 5;
+    </script>
     <!--script type="module">
       //dev env
-      import {estimatedDates} from '/src/main.ts'
+      import { estimatedDates } from "/src/main.ts";
+      var day = "Wednesday";
+      var sessions = 5;
+      estimatedDates({
+        day,
+        sessions,
+        holidays: ["07", "08"],
+        addYear: 0,
+      }).map((e) => {
+        console.log(e.date.format("DD/MM/YYYY"));
+        return e;
+      });
     </script-->
-    <script src="./dist/estimatedDates.umd.js"></script>
+    <div id="calendar-date-wrapper"></div>
+    <div id="ascent-form-object">
+      <input type="text" name="your-subject" />
+    </div>
+
     <script>
-      console.log(estimatedDates({
-        day: 'Monday',
-        sessions: 5,
-        holidays: ['07','08']
-      }));
+      var selectedDate = "Wednesday";
+      var numberOfSession = 5;
     </script>
+    <script src="./dist/estimatedDates.umd.js"></script>
+    <script src="./calendar.js"></script>
   </body>
 </html>
