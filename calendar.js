@@ -30,7 +30,7 @@ const applyDates = ({ sessions = 1, day = "Tuesday" }) => {
           <div class="elementor-button-wrapper">
             <a
               href="#ascent-form-object"
-              class="elementor-button-link elementor-button elementor-size-md"
+              class="elementor-button-link elementor-button"
               role="button"
             >
               <span class="elementor-button-content-wrapper">
